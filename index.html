@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HQ ESPORTS HUB | Zyndr × Fatal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050510',
+                        card: '#101022',
+                        zyndr: '#00CCFF',
+                        fatalRed: '#FF003C',
+                        fatalOrange: '#FF5E00',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glow-blue { filter: drop-shadow(0 0 10px #00CCFF); }
+            .glow-red { filter: drop-shadow(0 0 10px #FF003C); }
+            .gradient-zyndr { background: linear-gradient(90deg, #00CCFF, #0066FF); }
+            .gradient-fatal { background: linear-gradient(90deg, #FF003C, #FF5E00); }
+            .gradient-hq { background: linear-gradient(90deg, #00CCFF, #FF003C); }
+            .btn-hover { transition: all 0.3s ease; }
+        }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans min-h-screen py-12 px-4">
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center hidden">
+        <div class="bg-card p-8 rounded-lg w-full max-w-md border border-white/20">
+            <h2 class="text-2xl font-bold mb-6 text-center">🔐 ADMIN ACCESS</h2>
+            <input type="email" value="zyndresports@gmail.com" class="w-full p-3 mb-4 rounded bg-dark border border-gray-700" readonly>
+            <input type="password" value="Mader18!" class="w-full p-3 mb-6 rounded bg-dark border border-gray-700">
+            <button id="doLogin" class="gradient-hq w-full py-3 rounded-md font-bold hover:scale-105 transition">UNLOCK HUB</button>
+        </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div id="adminPanel" class="fixed top-0 right-0 h-full w-80 bg-card border-l border-white/20 z-40 p-6 hidden overflow-y-auto">
+        <h2 class="text-xl font-bold mb-6 text-center glow-blue">⚙️ HUB CONTROL CENTER</h2>
+
+        <!-- ZYNDR LINKS -->
+        <div class="mb-8 p-3 bg-dark rounded border border-zyndr/30">
+            <h3 class="font-bold text-zyndr mb-3">ZYNDR ESPORTS (RL)</h3>
+            <input type="text" id="zyndrWebsite" placeholder="Website URL" class="w-full p-2 mb-2 rounded bg-card" value="https://zyndresports.github.io">
+            <input type="text" id="zyndrDiscord" placeholder="Discord Invite" class="w-full p-2 mb-2 rounded bg-card" value="https://discord.gg/zyndr">
+            <input type="text" id="zyndrTikTok" placeholder="TikTok" class="w-full p-2 mb-2 rounded bg-card" value="https://tiktok.com/@zyndresports">
+            <input type="text" id="zyndrTwitter" placeholder="X / Twitter" class="w-full p-2 mb-2 rounded bg-card" value="https://x.com/zyndresports">
+        </div>
+
+        <!-- FATAL LINKS -->
+        <div class="mb-8 p-3 bg-dark rounded border border-fatalRed/30">
+            <h3 class="font-bold text-fatalRed mb-3">FATAL ESPORTS (FN)</h3>
+            <input type="text" id="fatalWebsite" placeholder="Website URL" class="w-full p-2 mb-2 rounded bg-card" value="https://fatalesports.github.io">
+            <input type="text" id="fatalDiscord" placeholder="Discord Invite" class="w-full p-2 mb-2 rounded bg-card" value="https://discord.gg/fatalesports">
+            <input type="text" id="fatalTikTok" placeholder="TikTok" class="w-full p-2 mb-2 rounded bg-card" value="https://tiktok.com/@fatalesports">
+            <input type="text" id="fatalTwitter" placeholder="X / Twitter" class="w-full p-2 mb-2 rounded bg-card" value="https://x.com/fatalesports">
+        </div>
+
+        <button id="saveAll" class="gradient-hq w-full py-3 rounded-md font-bold">💾 SAVE ALL CHANGES</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="max-w-lg mx-auto">
+
+        <!-- HEADER -->
+        <div class="text-center mb-12">
+            <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-bold gradient-hq bg-clip-text text-transparent glow-blue">HQ ESPORTS HUB</h1>
+            <p class="text-gray-400 mt-2">ZYNDR ESPORTS × FATAL ESPORTS</p>
+            <button id="openAdmin" class="mt-4 text-sm text-gray-500 hover:text-white transition">⚙️ Admin</button>
+        </div>
+
+        <!-- ZYNDR SECTION -->
+        <div class="mb-10 p-6 bg-card rounded-xl border-l-4 border-zyndr shadow-lg shadow-zyndr/10">
+            <h2 class="text-2xl font-bold text-center mb-6 text-zyndr glow-blue">ZYNDR ESPORTS<br><span class="text-sm font-normal">ROCKET LEAGUE</span></h2>
+            
+            <a id="zyndrWebsiteBtn" href="#" target="_blank" class="block gradient-zyndr py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:scale-[1.02]">🌐 OFFICIAL WEBSITE</a>
+            <a id="zyndrDiscordBtn" href="#" target="_blank" class="block bg-dark border border-zyndr/50 py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:bg-zyndr/10">💬 JOIN DISCORD</a>
+            <a id="zyndrTikTokBtn" href="#" target="_blank" class="block bg-dark border border-zyndr/50 py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:bg-zyndr/10">📱 TIKTOK</a>
+            <a id="zyndrTwitterBtn" href="#" target="_blank" class="block bg-dark border border-zyndr/50 py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:bg-zyndr/10">🐦 X / TWITTER</a>
+            <a href="https://zyndresports.github.io/join" target="_blank" class="block bg-dark border border-zyndr/50 py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:bg-zyndr/10">🚀 JOIN THE ROSTER</a>
+            <a href="https://zyndresports.github.io/coaching" target="_blank" class="block bg-dark border border-zyndr/50 py-3 px-4 rounded-lg text-center font-semibold btn-hover hover:bg-zyndr/10">🎓 COACHING</a>
+        </div>
+
+        <!-- FATAL SECTION -->
+        <div class="p-6 bg-card rounded-xl border-l-4 border-fatalRed shadow-lg shadow-fatalRed/10">
+            <h2 class="text-2xl font-bold text-center mb-6 text-fatalRed glow-red">FATAL ESPORTS<br><span class="text-sm font-normal">FORTNITE</span></h2>
+            
+            <a id="fatalWebsiteBtn" href="#" target="_blank" class="block gradient-fatal py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:scale-[1.02]">🌐 OFFICIAL WEBSITE</a>
+            <a id="fatalDiscordBtn" href="#" target="_blank" class="block bg-dark border border-fatalRed/50 py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:bg-fatalRed/10">💬 JOIN DISCORD</a>
+            <a id="fatalTikTokBtn" href="#" target="_blank" class="block bg-dark border border-fatalRed/50 py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:bg-fatalRed/10">📱 TIKTOK</a>
+            <a id="fatalTwitterBtn" href="#" target="_blank" class="block bg-dark border border-fatalRed/50 py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:bg-fatalRed/10">🐦 X / TWITTER</a>
+            <a href="https://fatalesports.github.io/join" target="_blank" class="block bg-dark border border-fatalRed/50 py-3 px-4 rounded-lg text-center font-semibold mb-3 btn-hover hover:bg-fatalRed/10">🚀 JOIN THE ROSTER</a>
+            <a href="https://fatalesports.github.io/coaching" target="_blank" class="block bg-dark border border-fatalRed/50 py-3 px-4 rounded-lg text-center font-semibold btn-hover hover:bg-fatalRed/10">🎓 COACHING</a>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="text-center text-gray-600 text-sm mt-12">
+            © 2026 HQ ESPORTS HUB • ALL RIGHTS RESERVED
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // LOGIN SYSTEM
+        const openAdmin = document.getElementById('openAdmin');
+        const loginModal = document.getElementById('loginModal');
+        const doLogin = document.getElementById('doLogin');
+        const adminPanel = document.getElementById('adminPanel');
+
+        openAdmin.addEventListener('click', () => loginModal.classList.remove('hidden'));
+        loginModal.addEventListener('click', e => e.target === loginModal && loginModal.classList.add('hidden'));
+
+        doLogin.addEventListener('click', () => {
+            loginModal.classList.add('hidden');
+            adminPanel.classList.remove('hidden');
+            loadLinks();
+        });
+
+        // LOAD / SAVE LINKS
+        const fields = ['zyndrWebsite','zyndrDiscord','zyndrTikTok','zyndrTwitter','fatalWebsite','fatalDiscord','fatalTikTok','fatalTwitter'];
+        const buttons = {
+            zyndrWebsite: 'zyndrWebsiteBtn', zyndrDiscord: 'zyndrDiscordBtn', zyndrTikTok: 'zyndrTikTokBtn', zyndrTwitter: 'zyndrTwitterBtn',
+            fatalWebsite: 'fatalWebsiteBtn', fatalDiscord: 'fatalDiscordBtn', fatalTikTok: 'fatalTikTokBtn', fatalTwitter: 'fatalTwitterBtn'
+        };
+
+        function loadLinks() {
+            fields.forEach(id => {
+                const val = localStorage.getItem(id) || document.getElementById(id).value;
+                document.getElementById(id).value = val;
+                document.getElementById(buttons[id]).href = val;
+            });
+        }
+
+        function saveLinks() {
+            fields.forEach(id => localStorage.setItem(id, document.getElementById(id).value));
+            alert('✅ ALL LINKS UPDATED EVERYWHERE!');
+            loadLinks();
+        }
+
+        document.getElementById('saveAll').addEventListener('click', saveLinks);
+
+        // INIT LOAD
+        loadLinks();
+    </script>
+</body>
+</html>
