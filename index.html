@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zyndr Esports</title>
+    <title>Zyndr X Fatal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
@@ -14,6 +14,8 @@
                         dark: '#0A0A1A',
                         card: '#121225',
                         zyndrBlue: '#0088FF',
+                        fatalRed: '#FF2222',
+                        crossYellow: '#FFCC00',
                     },
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                 }
@@ -23,14 +25,19 @@
     <style type="text/tailwindcss">
         @layer utilities {
             .glow-zyndr { filter: drop-shadow(0 0 10px #0088FF); }
-            .border-glow { border: 1px solid rgba(0,136,255,0.3); box-shadow: 0 0 15px rgba(0,136,255,0.1); }
+            .glow-fatal { filter: drop-shadow(0 0 10px #FF2222); }
+            .glow-cross { filter: drop-shadow(0 0 10px #FFCC00); }
+            .border-glow { border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 0 15px rgba(0,136,255,0.1); }
             .btn-hover { transition: all 0.3s ease; }
             .btn-hover:hover { transform: scale(1.03); }
             .zyndr-text { color: #0088FF; }
+            .fatal-text { color: #FF2222; }
+            .cross-text { color: #FFCC00; }
             .link-card { transition: all 0.3s ease; }
             .link-card:hover { transform: translateY(-4px); }
         }
     </style>
+    <!-- Protection -->
     <script>
     document.oncontextmenu = () => false;
     document.onkeydown = e => {
@@ -44,89 +51,152 @@
     <!-- LOGIN MODAL -->
     <div id="loginModal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center hidden">
         <div class="bg-card p-8 rounded-lg w-full max-w-md border-glow">
-            <h2 class="text-2xl font-bold mb-6 text-center zyndr-text glow-zyndr">ZYNDR ESPORTS ADMIN</h2>
+            <h2 class="text-2xl font-bold mb-6 text-center">
+                <span class="zyndr-text glow-zyndr">ZYNDR</span>
+                <span class="cross-text glow-cross mx-2">X</span>
+                <span class="fatal-text glow-fatal">FATAL</span>
+            </h2>
             <input type="text" id="loginEmail" placeholder="Email Address" autocomplete="off" class="w-full p-3 mb-4 rounded bg-dark border border-zyndrBlue/30">
-            <input type="password" id="loginPass" placeholder="Password" autocomplete="off" class="w-full p-3 mb-4 rounded bg-dark border border-zyndrBlue/30">
-            <button id="doLogin" class="w-full bg-zyndrBlue py-3 rounded-md font-bold btn-hover">LOGIN</button>
+            <input type="password" id="loginPass" placeholder="Password" autocomplete="off" class="w-full p-3 mb-4 rounded bg-dark border border-fatalRed/30">
+            <button id="doLogin" class="w-full bg-gradient-to-r from-zyndrBlue to-fatalRed py-3 rounded-md font-bold btn-hover">LOGIN</button>
         </div>
     </div>
 
-    <!-- ADMIN PANEL -->
-    <div id="adminPanel" class="fixed top-0 right-0 h-full w-80 bg-card border-l border-zyndrBlue/40 z-40 p-6 hidden overflow-y-auto shadow-2xl shadow-zyndrBlue/10">
-        <div class="text-xl font-bold mb-8 text-center zyndr-text glow-zyndr">ZYNDR ADMIN PANEL</div>
+    <!-- ADMIN PANEL — ALL LINKS ALREADY FILLED & SAVE PERMANENTLY -->
+    <div id="adminPanel" class="fixed top-0 right-0 h-full w-80 bg-card border-l border-crossYellow/40 z-40 p-6 hidden overflow-y-auto shadow-2xl shadow-crossYellow/10">
+        <div class="text-xl font-bold mb-8 text-center">
+            <span class="zyndr-text glow-zyndr">ADMIN</span>
+            <span class="cross-text glow-cross mx-1">X</span>
+            <span class="fatal-text glow-fatal">PANEL</span>
+        </div>
 
         <div class="mb-6 p-4 bg-dark rounded border-glow">
-            <h3 class="font-bold zyndr-text mb-3">🔗 DISCORD LINK</h3>
-            <input type="text" id="discordLink" class="w-full p-2 mb-6 rounded bg-card border border-zyndrBlue/30" value="https://discord.gg/mFB7YAfhSX">
+            <h3 class="font-bold text-crossYellow mb-3">🔗 DISCORD LINKS</h3>
+            <label class="text-sm zyndr-text">Zyndr Discord</label>
+            <input type="text" id="discordZyndr" class="w-full p-2 mb-3 rounded bg-card border border-zyndrBlue/30" value="https://discord.gg/mFB7YAfhSX">
+            
+            <label class="text-sm fatal-text">Fatal Discord</label>
+            <input type="text" id="discordFatal" class="w-full p-2 mb-3 rounded bg-card border border-fatalRed/30" value="https://discord.gg/jBcTShqxz7">
+            
+            <label class="text-sm cross-text">Zyndr X Fatal Discord</label>
+            <input type="text" id="discordBoth" class="w-full p-2 mb-4 rounded bg-card border border-crossYellow/30" value="https://discord.gg/cMzEhKvuz5">
 
-            <h3 class="font-bold zyndr-text mb-3">🎵 TIKTOK LINK</h3>
-            <input type="text" id="tiktokLink" class="w-full p-2 mb-6 rounded bg-card border border-zyndrBlue/30" value="https://tiktok.com/zyndresports">
 
-            <h3 class="font-bold zyndr-text mb-3">🌐 WEBSITE LINK</h3>
-            <input type="text" id="websiteLink" class="w-full p-2 mb-6 rounded bg-card border border-zyndrBlue/30" value="https://zyndresports-acc.github.io/zyndresports/#">
+            <h3 class="font-bold text-crossYellow mb-3 mt-6">🎵 TIKTOK LINKS</h3>
+            <label class="text-sm zyndr-text">Zyndr TikTok</label>
+            <input type="text" id="tiktokZyndr" class="w-full p-2 mb-3 rounded bg-card border border-zyndrBlue/30" value="https://tiktok.com/zyndresports">
+            
+            <label class="text-sm fatal-text">Fatal TikTok</label>
+            <input type="text" id="tiktokFatal" class="w-full p-2 mb-3 rounded bg-card border border-fatalRed/30" value="https://tiktok.com/exodusvoid1">
+            
+            <label class="text-sm cross-text">Zyndr X Fatal TikTok</label>
+            <input type="text" id="tiktokBoth" class="w-full p-2 mb-4 rounded bg-card border border-crossYellow/30" value="https://tiktok.com/fatalxzyndr">
 
-            <button id="saveAllLinks" class="w-full bg-zyndrBlue py-3 rounded-md font-bold btn-hover mt-2">💾 SAVE ALL LINKS</button>
+
+            <h3 class="font-bold text-crossYellow mb-3 mt-6">🌐 WEBSITE LINKS</h3>
+            <label class="text-sm zyndr-text">Zyndr Website</label>
+            <input type="text" id="webZyndr" class="w-full p-2 mb-3 rounded bg-card border border-zyndrBlue/30" value="https://zyndresports-acc.github.io/zyndresports/#">
+            
+            <label class="text-sm fatal-text">Fatal Website</label>
+            <input type="text" id="webFatal" class="w-full p-2 mb-4 rounded bg-card border border-fatalRed/30" value="https://zyndresports-acc.github.io/fatalesports/#">
+
+
+            <button id="saveAllLinks" class="w-full bg-gradient-to-r from-zyndrBlue via-crossYellow to-fatalRed py-3 rounded-md font-bold btn-hover mt-4">💾 SAVE ALL LINKS</button>
         </div>
     </div>
 
     <!-- NAVBAR -->
-    <nav class="fixed w-full top-0 z-30 bg-dark/80 backdrop-blur-md border-b border-zyndrBlue/20">
+    <nav class="fixed w-full top-0 z-30 bg-dark/80 backdrop-blur-md border-b border-crossYellow/20">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold zyndr-text glow-zyndr">ZYNDR ESPORTS</div>
-            <button id="loginBtn" onclick="toggleModal('loginModal')" class="px-5 py-2 rounded-md font-bold border border-zyndrBlue/40 hover:bg-zyndrBlue/10 btn-hover">LOGIN</button>
+            <div class="text-2xl font-bold">
+                <span class="zyndr-text glow-zyndr">ZYNDR ESPORTS</span>
+                <span class="cross-text glow-cross mx-2">X</span>
+                <span class="fatal-text glow-fatal">FATAL ESPORTS</span>
+            </div>
+            <button id="loginBtn" onclick="toggleModal('loginModal')" class="px-5 py-2 rounded-md font-bold border border-crossYellow/40 hover:bg-crossYellow/10 btn-hover">LOGIN</button>
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT — SINGLE PAGE ONLY -->
     <main class="pt-28 pb-20 px-4">
         <div class="container mx-auto max-w-4xl">
 
+            <!-- HEADER -->
             <section class="text-center mb-20">
-                <h1 class="text-[clamp(3rem,8vw,6rem)] font-bold mb-6 zyndr-text glow-zyndr">ZYNDR ESPORTS</h1>
-                <p class="text-lg text-gray-300 max-w-xl mx-auto">Official links hub — home of competitive excellence.</p>
+                <h1 class="text-[clamp(3rem,8vw,6rem)] font-bold mb-6">
+                    <span class="zyndr-text glow-zyndr">ZYNDR</span>
+                    <span class="cross-text glow-cross mx-3">X</span>
+                    <span class="fatal-text glow-fatal">FATAL</span>
+                </h1>
+                <p class="text-lg text-gray-300 max-w-xl mx-auto">Official links hub — everything in one place.</p>
             </section>
 
 
-            <!-- DISCORD -->
+            <!-- DISCORD LINKS -->
             <section class="mb-24">
-                <h2 class="text-3xl font-bold text-center mb-10 zyndr-text">
-                    <i class="fa fa-discord mr-2 text-[#5865F2] glow-zyndr"></i> DISCORD SERVER
+                <h2 class="text-3xl font-bold text-center mb-10">
+                    <i class="fa fa-discord mr-2 text-[#5865F2]"></i> DISCORD SERVERS
                 </h2>
-                <div class="max-w-md mx-auto">
-                    <a id="linkDiscord" href="https://discord.gg/mFB7YAfhSX" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-zyndrBlue/30 hover:border-zyndrBlue/70 text-center block">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <a id="linkDiscordZyndr" href="https://discord.gg/mFB7YAfhSX" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-zyndrBlue/30 hover:border-zyndrBlue/70 text-center">
                         <i class="fa fa-discord text-5xl zyndr-text glow-zyndr mb-4"></i>
-                        <h3 class="text-xl font-bold zyndr-text mb-2">JOIN OUR COMMUNITY</h3>
-                        <p class="text-gray-400 text-sm">Connect with members & stay updated</p>
+                        <h3 class="text-xl font-bold zyndr-text mb-2">ZYNDR ESPORTS</h3>
+                        <p class="text-gray-400 text-sm">Join Community</p>
+                    </a>
+                    <a id="linkDiscordFatal" href="https://discord.gg/jBcTShqxz7" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-fatalRed/30 hover:border-fatalRed/70 text-center">
+                        <i class="fa fa-discord text-5xl fatal-text glow-fatal mb-4"></i>
+                        <h3 class="text-xl font-bold fatal-text mb-2">FATAL ESPORTS</h3>
+                        <p class="text-gray-400 text-sm">Join Community</p>
+                    </a>
+                    <a id="linkDiscordBoth" href="https://discord.gg/cMzEhKvuz5" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-crossYellow/30 hover:border-crossYellow/70 text-center">
+                        <i class="fa fa-discord text-5xl cross-text glow-cross mb-4"></i>
+                        <h3 class="text-xl font-bold cross-text mb-2">ZYNDR X FATAL</h3>
+                        <p class="text-gray-400 text-sm">Main Hub</p>
                     </a>
                 </div>
             </section>
 
 
-            <!-- TIKTOK -->
+            <!-- TIKTOK LINKS -->
             <section class="mb-24">
-                <h2 class="text-3xl font-bold text-center mb-10 zyndr-text">
-                    <i class="fa fa-tiktok mr-2 text-white glow-zyndr"></i> TIKTOK OFFICIAL
+                <h2 class="text-3xl font-bold text-center mb-10">
+                    <i class="fa fa-tiktok mr-2 text-white"></i> TIKTOK ACCOUNTS
                 </h2>
-                <div class="max-w-md mx-auto">
-                    <a id="linkTiktok" href="https://tiktok.com/zyndresports" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-zyndrBlue/30 hover:border-zyndrBlue/70 text-center block">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <a id="linkTiktokZyndr" href="https://tiktok.com/zyndresports" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-zyndrBlue/30 hover:border-zyndrBlue/70 text-center">
                         <i class="fa fa-tiktok text-5xl zyndr-text glow-zyndr mb-4"></i>
                         <h3 class="text-xl font-bold zyndr-text mb-2">@ZYNDR_ESPORTS</h3>
-                        <p class="text-gray-400 text-sm">Watch our latest content & highlights</p>
+                        <p class="text-gray-400 text-sm">Follow Content</p>
+                    </a>
+                    <a id="linkTiktokFatal" href="https://tiktok.com/exodusvoid1" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-fatalRed/30 hover:border-fatalRed/70 text-center">
+                        <i class="fa fa-tiktok text-5xl fatal-text glow-fatal mb-4"></i>
+                        <h3 class="text-xl font-bold fatal-text mb-2">@EXODUSVOID1</h3>
+                        <p class="text-gray-400 text-sm">Follow Content</p>
+                    </a>
+                    <a id="linkTiktokBoth" href="https://tiktok.com/fatalxzyndr" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-crossYellow/30 hover:border-crossYellow/70 text-center">
+                        <i class="fa fa-tiktok text-5xl cross-text glow-cross mb-4"></i>
+                        <h3 class="text-xl font-bold cross-text mb-2">@FATALXZYNDR</h3>
+                        <p class="text-gray-400 text-sm">Shared Content</p>
                     </a>
                 </div>
             </section>
 
 
-            <!-- WEBSITE -->
+            <!-- WEBSITE LINKS -->
             <section class="mb-16">
-                <h2 class="text-3xl font-bold text-center mb-10 zyndr-text">
-                    <i class="fa fa-globe mr-2 text-green-400 glow-zyndr"></i> OFFICIAL WEBSITE
+                <h2 class="text-3xl font-bold text-center mb-10">
+                    <i class="fa fa-globe mr-2 text-green-400"></i> OFFICIAL WEBSITES
                 </h2>
-                <div class="max-w-md mx-auto">
-                    <a id="linkWebsite" href="https://zyndresports-acc.github.io/zyndresports/#" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-zyndrBlue/30 hover:border-zyndrBlue/70 text-center block">
+                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <a id="linkWebZyndr" href="https://zyndresports-acc.github.io/zyndresports/#" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-zyndrBlue/30 hover:border-zyndrBlue/70 text-center">
                         <i class="fa fa-globe text-5xl zyndr-text glow-zyndr mb-4"></i>
-                        <h3 class="text-xl font-bold zyndr-text mb-2">VISIT MAIN SITE</h3>
-                        <p class="text-gray-400 text-sm">Full features, news & more</p>
+                        <h3 class="text-xl font-bold zyndr-text mb-2">ZYNDR ESPORTS OFFICIAL</h3>
+                        <p class="text-gray-400 text-sm">Visit Website</p>
+                    </a>
+                    <a id="linkWebFatal" href="https://zyndresports-acc.github.io/fatalesports/#" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-fatalRed/30 hover:border-fatalRed/70 text-center">
+                        <i class="fa fa-globe text-5xl fatal-text glow-fatal mb-4"></i>
+                        <h3 class="text-xl font-bold fatal-text mb-2">FATAL ESPORTS OFFICIAL</h3>
+                        <p class="text-gray-400 text-sm">Visit Website</p>
                     </a>
                 </div>
             </section>
@@ -135,29 +205,37 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-card border-t border-zyndrBlue/20 py-8 px-4 text-center">
+    <footer class="bg-card border-t border-crossYellow/20 py-8 px-4 text-center">
         <div class="container mx-auto">
-            <div class="text-xl font-bold mb-3 zyndr-text glow-zyndr">ZYNDR ESPORTS</div>
+            <div class="text-xl font-bold mb-3">
+                <span class="zyndr-text glow-zyndr">ZYNDR ESPORTS</span>
+                <span class="cross-text glow-cross mx-2">X</span>
+                <span class="fatal-text glow-fatal">FATAL ESPORTS</span>
+            </div>
             <p class="text-gray-500 text-sm">© 2026 • All Rights Reserved</p>
         </div>
     </footer>
 
+    <!-- SCRIPTS — SAVES PROPERLY NOW -->
     <script>
+        // MODAL TOGGLE
         function toggleModal(id) {
             const el = document.getElementById(id);
             if(el) el.classList.toggle('hidden');
         }
 
+        // LOGIN SYSTEM
         const doLogin = document.getElementById('doLogin');
         const adminPanel = document.getElementById('adminPanel');
         const loginBtn = document.getElementById('loginBtn');
 
-        const ADMIN_EMAIL = 'admin@zyndresports.com';
-        const ADMIN_PASS = 'Zyndr2026!';
+        const ADMIN_EMAIL = 'admin@zyndrxfatal.com';
+        const ADMIN_PASS = 'ZxF@2026';
 
         doLogin.addEventListener('click', () => {
             const email = document.getElementById('loginEmail').value.trim();
             const pass = document.getElementById('loginPass').value.trim();
+
             if(email === ADMIN_EMAIL && pass === ADMIN_PASS) {
                 toggleModal('loginModal');
                 adminPanel.classList.remove('hidden');
@@ -169,31 +247,69 @@
         });
 
 
+        // LINK SYSTEM — SAVES PERMANENTLY, LOADS AFTER REFRESH
         const elements = {
-            discIn: document.getElementById('discordLink'), discOut: document.getElementById('linkDiscord'),
-            ttIn: document.getElementById('tiktokLink'), ttOut: document.getElementById('linkTiktok'),
-            webIn: document.getElementById('websiteLink'), webOut: document.getElementById('linkWebsite')
+            // Discord
+            discZIn: document.getElementById('discordZyndr'), discZOut: document.getElementById('linkDiscordZyndr'),
+            discFIn: document.getElementById('discordFatal'), discFOut: document.getElementById('linkDiscordFatal'),
+            discBIn: document.getElementById('discordBoth'), discBOut: document.getElementById('linkDiscordBoth'),
+
+            // TikTok
+            ttZIn: document.getElementById('tiktokZyndr'), ttZOut: document.getElementById('linkTiktokZyndr'),
+            ttFIn: document.getElementById('tiktokFatal'), ttFOut: document.getElementById('linkTiktokFatal'),
+            ttBIn: document.getElementById('tiktokBoth'), ttBOut: document.getElementById('linkTiktokBoth'),
+
+            // Websites
+            webZIn: document.getElementById('webZyndr'), webZOut: document.getElementById('linkWebZyndr'),
+            webFIn: document.getElementById('webFatal'), webFOut: document.getElementById('linkWebFatal')
         };
 
+        // Load saved links when page loads
         window.addEventListener('load', () => {
-            elements.discIn.value = localStorage.getItem('zyndrDiscord') || elements.discIn.value;
-            elements.ttIn.value = localStorage.getItem('zyndrTiktok') || elements.ttIn.value;
-            elements.webIn.value = localStorage.getItem('zyndrWebsite') || elements.webIn.value;
-            updateAllLinks();
+            // Load from storage or use default values
+            elements.discZIn.value = localStorage.getItem('discordZyndr') || elements.discZIn.value;
+            elements.discFIn.value = localStorage.getItem('discordFatal') || elements.discFIn.value;
+            elements.discBIn.value = localStorage.getItem('discordBoth') || elements.discBIn.value;
+
+            elements.ttZIn.value = localStorage.getItem('tiktokZyndr') || elements.ttZIn.value;
+            elements.ttFIn.value = localStorage.getItem('tiktokFatal') || elements.ttFIn.value;
+            elements.ttBIn.value = localStorage.getItem('tiktokBoth') || elements.ttBIn.value;
+
+            elements.webZIn.value = localStorage.getItem('webZyndr') || elements.webZIn.value;
+            elements.webFIn.value = localStorage.getItem('webFatal') || elements.webFIn.value;
+
+            updateDisplayedLinks();
         });
 
-        function updateAllLinks() {
-            elements.discOut.href = elements.discIn.value;
-            elements.ttOut.href = elements.ttIn.value;
-            elements.webOut.href = elements.webIn.value;
+        // Update all visible links from inputs
+        function updateDisplayedLinks() {
+            elements.discZOut.href = elements.discZIn.value;
+            elements.discFOut.href = elements.discFIn.value;
+            elements.discBOut.href = elements.discBIn.value;
+
+            elements.ttZOut.href = elements.ttZIn.value;
+            elements.ttFOut.href = elements.ttFIn.value;
+            elements.ttBOut.href = elements.ttBIn.value;
+
+            elements.webZOut.href = elements.webZIn.value;
+            elements.webFOut.href = elements.webFIn.value;
         }
 
+        // Save everything permanently
         document.getElementById('saveAllLinks').addEventListener('click', () => {
-            localStorage.setItem('zyndrDiscord', elements.discIn.value.trim());
-            localStorage.setItem('zyndrTiktok', elements.ttIn.value.trim());
-            localStorage.setItem('zyndrWebsite', elements.webIn.value.trim());
-            updateAllLinks();
-            alert('✅ ALL LINKS SAVED PERMANENTLY!');
+            localStorage.setItem('discordZyndr', elements.discZIn.value.trim());
+            localStorage.setItem('discordFatal', elements.discFIn.value.trim());
+            localStorage.setItem('discordBoth', elements.discBIn.value.trim());
+
+            localStorage.setItem('tiktokZyndr', elements.ttZIn.value.trim());
+            localStorage.setItem('tiktokFatal', elements.ttFIn.value.trim());
+            localStorage.setItem('tiktokBoth', elements.ttBIn.value.trim());
+
+            localStorage.setItem('webZyndr', elements.webZIn.value.trim());
+            localStorage.setItem('webFatal', elements.webFIn.value.trim());
+
+            updateDisplayedLinks();
+            alert('✅ ALL LINKS SAVED — THEY STAY AFTER REFRESH!');
         });
     </script>
 </body>
