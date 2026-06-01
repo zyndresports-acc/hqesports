@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zyndr <span style="color:#FFCC00">X</span> Fatal</title>
+    <title>Zyndr X Fatal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <!-- ADMIN PANEL -->
+    <!-- ADMIN PANEL — ALL LINKS EDITABLE -->
     <div id="adminPanel" class="fixed top-0 right-0 h-full w-80 bg-card border-l border-crossYellow/40 z-40 p-6 hidden overflow-y-auto shadow-2xl shadow-crossYellow/10">
         <div class="text-xl font-bold mb-8 text-center">
             <span class="zyndr-text glow-zyndr">ADMIN</span>
@@ -71,8 +71,7 @@
         </div>
 
         <div class="mb-6 p-4 bg-dark rounded border-glow">
-            <h3 class="font-bold text-crossYellow mb-3">🔗 DISCORD LINKS<br><span class="text-xs text-gray-400">(3 Links)</span></h3>
-            
+            <h3 class="font-bold text-crossYellow mb-3">🔗 DISCORD LINKS</h3>
             <label class="text-sm zyndr-text">Zyndr Discord</label>
             <input type="text" id="discordZyndr" placeholder="https://discord.gg/..." class="w-full p-2 mb-3 rounded bg-card border border-zyndrBlue/30" value="https://discord.gg/zyndr">
             
@@ -83,8 +82,7 @@
             <input type="text" id="discordBoth" placeholder="https://discord.gg/..." class="w-full p-2 mb-4 rounded bg-card border border-crossYellow/30" value="https://discord.gg/zyndrxfatal">
 
 
-            <h3 class="font-bold text-crossYellow mb-3 mt-6">🎵 TIKTOK LINKS<br><span class="text-xs text-gray-400">(3 Links)</span></h3>
-            
+            <h3 class="font-bold text-crossYellow mb-3 mt-6">🎵 TIKTOK LINKS</h3>
             <label class="text-sm zyndr-text">Zyndr TikTok</label>
             <input type="text" id="tiktokZyndr" placeholder="https://tiktok.com/..." class="w-full p-2 mb-3 rounded bg-card border border-zyndrBlue/30" value="https://tiktok.com/@zyndr">
             
@@ -93,6 +91,14 @@
             
             <label class="text-sm cross-text">Zyndr X Fatal TikTok</label>
             <input type="text" id="tiktokBoth" placeholder="https://tiktok.com/..." class="w-full p-2 mb-4 rounded bg-card border border-crossYellow/30" value="https://tiktok.com/@zyndrxfatal">
+
+
+            <h3 class="font-bold text-crossYellow mb-3 mt-6">🌐 WEBSITE LINKS</h3>
+            <label class="text-sm zyndr-text">Zyndr Website</label>
+            <input type="text" id="webZyndr" placeholder="https://..." class="w-full p-2 mb-3 rounded bg-card border border-zyndrBlue/30" value="https://zyndr.com">
+            
+            <label class="text-sm fatal-text">Fatal Website</label>
+            <input type="text" id="webFatal" placeholder="https://..." class="w-full p-2 mb-4 rounded bg-card border border-fatalRed/30" value="https://fatal.com">
 
 
             <button id="saveAllLinks" class="w-full bg-gradient-to-r from-zyndrBlue via-crossYellow to-fatalRed py-3 rounded-md font-bold btn-hover mt-4">💾 SAVE ALL LINKS</button>
@@ -115,77 +121,83 @@
     <main class="pt-28 pb-20 px-4">
         <div class="container mx-auto max-w-4xl">
 
-            <!-- HEADER SECTION -->
+            <!-- HEADER -->
             <section class="text-center mb-20">
                 <h1 class="text-[clamp(3rem,8vw,6rem)] font-bold mb-6">
                     <span class="zyndr-text glow-zyndr">ZYNDR</span>
                     <span class="cross-text glow-cross mx-3">X</span>
                     <span class="fatal-text glow-fatal">FATAL</span>
                 </h1>
-                <p class="text-lg text-gray-300 max-w-xl mx-auto">Official hub — all our links in one place. Connect, follow, and join the community.</p>
+                <p class="text-lg text-gray-300 max-w-xl mx-auto">Official links hub — everything in one place.</p>
             </section>
 
 
-            <!-- DISCORD LINKS SECTION -->
+            <!-- DISCORD LINKS -->
             <section class="mb-24">
                 <h2 class="text-3xl font-bold text-center mb-10">
                     <i class="fa fa-discord mr-2 text-[#5865F2]"></i> DISCORD SERVERS
                 </h2>
                 <div class="grid md:grid-cols-3 gap-6">
-                    
-                    <!-- Zyndr Discord -->
                     <a id="linkDiscordZyndr" href="https://discord.gg/zyndr" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-zyndrBlue/30 hover:border-zyndrBlue/70 text-center">
                         <i class="fa fa-discord text-5xl zyndr-text glow-zyndr mb-4"></i>
                         <h3 class="text-xl font-bold zyndr-text mb-2">ZYNDR</h3>
-                        <p class="text-gray-400 text-sm">Join Zyndr's Community</p>
+                        <p class="text-gray-400 text-sm">Join Community</p>
                     </a>
-
-                    <!-- Fatal Discord -->
                     <a id="linkDiscordFatal" href="https://discord.gg/fatal" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-fatalRed/30 hover:border-fatalRed/70 text-center">
                         <i class="fa fa-discord text-5xl fatal-text glow-fatal mb-4"></i>
                         <h3 class="text-xl font-bold fatal-text mb-2">FATAL</h3>
-                        <p class="text-gray-400 text-sm">Join Fatal's Community</p>
+                        <p class="text-gray-400 text-sm">Join Community</p>
                     </a>
-
-                    <!-- Zyndr X Fatal Discord -->
                     <a id="linkDiscordBoth" href="https://discord.gg/zyndrxfatal" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-crossYellow/30 hover:border-crossYellow/70 text-center">
                         <i class="fa fa-discord text-5xl cross-text glow-cross mb-4"></i>
                         <h3 class="text-xl font-bold cross-text mb-2">ZYNDR X FATAL</h3>
-                        <p class="text-gray-400 text-sm">Join Our Main Hub</p>
+                        <p class="text-gray-400 text-sm">Main Hub</p>
                     </a>
-
                 </div>
             </section>
 
 
-            <!-- TIKTOK LINKS SECTION -->
-            <section class="mb-16">
+            <!-- TIKTOK LINKS -->
+            <section class="mb-24">
                 <h2 class="text-3xl font-bold text-center mb-10">
                     <i class="fa fa-tiktok mr-2 text-white"></i> TIKTOK ACCOUNTS
                 </h2>
                 <div class="grid md:grid-cols-3 gap-6">
-                    
-                    <!-- Zyndr TikTok -->
                     <a id="linkTiktokZyndr" href="https://tiktok.com/@zyndr" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-zyndrBlue/30 hover:border-zyndrBlue/70 text-center">
                         <i class="fa fa-tiktok text-5xl zyndr-text glow-zyndr mb-4"></i>
                         <h3 class="text-xl font-bold zyndr-text mb-2">@ZYNDR</h3>
-                        <p class="text-gray-400 text-sm">Follow Zyndr's Content</p>
+                        <p class="text-gray-400 text-sm">Follow Content</p>
                     </a>
-
-                    <!-- Fatal TikTok -->
                     <a id="linkTiktokFatal" href="https://tiktok.com/@fatal" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-fatalRed/30 hover:border-fatalRed/70 text-center">
                         <i class="fa fa-tiktok text-5xl fatal-text glow-fatal mb-4"></i>
                         <h3 class="text-xl font-bold fatal-text mb-2">@FATAL</h3>
-                        <p class="text-gray-400 text-sm">Follow Fatal's Content</p>
+                        <p class="text-gray-400 text-sm">Follow Content</p>
                     </a>
-
-                    <!-- Zyndr X Fatal TikTok -->
                     <a id="linkTiktokBoth" href="https://tiktok.com/@zyndrxfatal" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-crossYellow/30 hover:border-crossYellow/70 text-center">
                         <i class="fa fa-tiktok text-5xl cross-text glow-cross mb-4"></i>
                         <h3 class="text-xl font-bold cross-text mb-2">@ZYNDRXFATAL</h3>
-                        <p class="text-gray-400 text-sm">Follow Our Shared Content</p>
+                        <p class="text-gray-400 text-sm">Shared Content</p>
                     </a>
+                </div>
+            </section>
 
+
+            <!-- WEBSITE LINKS -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-10">
+                    <i class="fa fa-globe mr-2 text-green-400"></i> OFFICIAL WEBSITES
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <a id="linkWebZyndr" href="https://zyndr.com" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-zyndrBlue/30 hover:border-zyndrBlue/70 text-center">
+                        <i class="fa fa-globe text-5xl zyndr-text glow-zyndr mb-4"></i>
+                        <h3 class="text-xl font-bold zyndr-text mb-2">ZYNDR OFFICIAL</h3>
+                        <p class="text-gray-400 text-sm">Visit Website</p>
+                    </a>
+                    <a id="linkWebFatal" href="https://fatal.com" target="_blank" class="link-card bg-card p-8 rounded-xl border-glow border-fatalRed/30 hover:border-fatalRed/70 text-center">
+                        <i class="fa fa-globe text-5xl fatal-text glow-fatal mb-4"></i>
+                        <h3 class="text-xl font-bold fatal-text mb-2">FATAL OFFICIAL</h3>
+                        <p class="text-gray-400 text-sm">Visit Website</p>
+                    </a>
                 </div>
             </section>
 
@@ -217,7 +229,6 @@
         const adminPanel = document.getElementById('adminPanel');
         const loginBtn = document.getElementById('loginBtn');
 
-        // ADMIN CREDENTIALS — YOU CAN CHANGE THESE HERE
         const ADMIN_EMAIL = 'admin@zyndrxfatal.com';
         const ADMIN_PASS = 'ZxF@2026';
 
@@ -236,38 +247,38 @@
         });
 
 
-        // LINK SYSTEM — 3 DISCORD + 3 TIKTOK
-        const el = {
-            // Discord inputs
-            discZIn: document.getElementById('discordZyndr'),
-            discFIn: document.getElementById('discordFatal'),
-            discBIn: document.getElementById('discordBoth'),
-            // TikTok inputs
-            ttZIn: document.getElementById('tiktokZyndr'),
-            ttFIn: document.getElementById('tiktokFatal'),
-            ttBIn: document.getElementById('tiktokBoth'),
+        // LINK SYSTEM — ALL EDITABLE & SAVEABLE
+        const elements = {
+            // Discord inputs/outputs
+            discZIn: document.getElementById('discordZyndr'), discZOut: document.getElementById('linkDiscordZyndr'),
+            discFIn: document.getElementById('discordFatal'), discFOut: document.getElementById('linkDiscordFatal'),
+            discBIn: document.getElementById('discordBoth'), discBOut: document.getElementById('linkDiscordBoth'),
 
-            // Discord links
-            discZOut: document.getElementById('linkDiscordZyndr'),
-            discFOut: document.getElementById('linkDiscordFatal'),
-            discBOut: document.getElementById('linkDiscordBoth'),
-            // TikTok links
-            ttZOut: document.getElementById('linkTiktokZyndr'),
-            ttFOut: document.getElementById('linkTiktokFatal'),
-            ttBOut: document.getElementById('linkTiktokBoth'),
+            // TikTok inputs/outputs
+            ttZIn: document.getElementById('tiktokZyndr'), ttZOut: document.getElementById('linkTiktokZyndr'),
+            ttFIn: document.getElementById('tiktokFatal'), ttFOut: document.getElementById('linkTiktokFatal'),
+            ttBIn: document.getElementById('tiktokBoth'), ttBOut: document.getElementById('linkTiktokBoth'),
+
+            // Website inputs/outputs
+            webZIn: document.getElementById('webZyndr'), webZOut: document.getElementById('linkWebZyndr'),
+            webFIn: document.getElementById('webFatal'), webFOut: document.getElementById('linkWebFatal')
         };
 
-        // SAVE ALL LINKS FUNCTION
+        // Save all links
         document.getElementById('saveAllLinks').addEventListener('click', () => {
-            // Update Discord
-            el.discZOut.href = el.discZIn.value.trim() || '#';
-            el.discFOut.href = el.discFIn.value.trim() || '#';
-            el.discBOut.href = el.discBIn.value.trim() || '#';
+            // Discord
+            elements.discZOut.href = elements.discZIn.value.trim() || '#';
+            elements.discFOut.href = elements.discFIn.value.trim() || '#';
+            elements.discBOut.href = elements.discBIn.value.trim() || '#';
 
-            // Update TikTok
-            el.ttZOut.href = el.ttZIn.value.trim() || '#';
-            el.ttFOut.href = el.ttFIn.value.trim() || '#';
-            el.ttBOut.href = el.ttBIn.value.trim() || '#';
+            // TikTok
+            elements.ttZOut.href = elements.ttZIn.value.trim() || '#';
+            elements.ttFOut.href = elements.ttFIn.value.trim() || '#';
+            elements.ttBOut.href = elements.ttBIn.value.trim() || '#';
+
+            // Websites
+            elements.webZOut.href = elements.webZIn.value.trim() || '#';
+            elements.webFOut.href = elements.webFIn.value.trim() || '#';
 
             alert('✅ ALL LINKS UPDATED SUCCESSFULLY!');
         });
