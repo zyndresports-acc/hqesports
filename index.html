@@ -96,8 +96,12 @@
             <hr class="border-neonGreen/20 my-4">
 
             <h3 class="font-bold text-neonGreen mb-2">🔧 SITE SETTINGS</h3>
-            <input type="text" id="discordLinkInput" placeholder="Discord Invite URL" class="w-full p-2 mb-2 rounded bg-card" value="https://discord.gg/hqesports">
-            <button id="saveDiscord" class="w-full gradient-btn py-2 rounded text-sm font-bold btn-hover mb-3">💾 UPDATE DISCORD EVERYWHERE</button>
+            <!-- ✅ TWO DISCORD SERVERS ✅ -->
+            <input type="text" id="discordLink1Input" placeholder="Discord Server 1 URL" class="w-full p-2 mb-2 rounded bg-card" value="https://discord.gg/hqesports1">
+            <input type="text" id="discordLink2Input" placeholder="Discord Server 2 URL" class="w-full p-2 mb-2 rounded bg-card" value="https://discord.gg/hqesports2">
+            <!-- ✅ TIKTOK LINK ✅ -->
+            <input type="text" id="tiktokLinkInput" placeholder="TikTok URL" class="w-full p-2 mb-2 rounded bg-card" value="https://tiktok.com/@hqesports">
+            <button id="saveLinksBtn" class="w-full gradient-btn py-2 rounded text-sm font-bold btn-hover mb-3">💾 UPDATE ALL LINKS</button>
 
             <input type="text" id="statPlayers" class="w-full p-2 mb-1 rounded bg-card" value="22">
             <input type="text" id="statTournaments" class="w-full p-2 mb-1 rounded bg-card" value="16">
@@ -141,7 +145,10 @@
                 <a href="#" onclick="showPage('events')" class="hover:text-neonGreen transition">EVENTS</a>
                 <a href="#" onclick="showPage('coaching')" class="hover:text-neonGreen transition">COACHING</a>
                 <a href="#" onclick="showPage('contact')" class="hover:text-neonGreen transition">CONTACT</a>
-                <a id="navDiscord" href="https://discord.gg/hqesports" target="_blank" class="text-neonGreen hover:glow-green"><i class="fa fa-discord text-lg"></i></a>
+                <!-- ✅ TWO DISCORD + TIKTOK IN NAV ✅ -->
+                <a id="navDiscord1" href="https://discord.gg/hqesports1" target="_blank" class="text-neonGreen hover:glow-green"><i class="fa fa-discord text-lg"></i></a>
+                <a id="navDiscord2" href="https://discord.gg/hqesports2" target="_blank" class="text-neonGreen hover:glow-green"><i class="fa fa-discord text-lg"></i></a>
+                <a id="navTikTok" href="https://tiktok.com/@hqesports" target="_blank" class="text-neonGreen hover:glow-green"><i class="fa fa-tiktok text-lg"></i></a>
             </div>
             <button id="loginBtn" onclick="toggleModal('loginModal')" class="gradient-btn px-5 py-2 rounded-md font-bold btn-hover">LOGIN</button>
         </div>
@@ -311,18 +318,19 @@
             <!-- CONTACT -->
             <section id="contact" class="page-section max-w-lg mx-auto">
                 <h2 class="text-3xl font-bold text-center mb-8 gradient-text glow-teal">GET IN TOUCH</h2>
+                <!-- ✅ TWO DISCORD + TIKTOK IN CONTACT ✅ -->
                 <div class="grid md:grid-cols-3 gap-4 mb-10 text-center">
-                    <a href="https://tiktok.com/@hqesports" target="_blank" class="p-4 bg-card rounded-lg border-glow hover:bg-neonTeal/10 transition">
+                    <a id="contactDiscord1" href="https://discord.gg/hqesports1" target="_blank" class="p-4 bg-card rounded-lg border-glow hover:bg-neonTeal/10 transition">
+                        <i class="fa fa-discord text-2xl text-neonTeal mb-2"></i>
+                        <div>Discord Server 1</div>
+                    </a>
+                    <a id="contactDiscord2" href="https://discord.gg/hqesports2" target="_blank" class="p-4 bg-card rounded-lg border-glow hover:bg-neonTeal/10 transition">
+                        <i class="fa fa-discord text-2xl text-neonTeal mb-2"></i>
+                        <div>Discord Server 2</div>
+                    </a>
+                    <a id="contactTikTok" href="https://tiktok.com/@hqesports" target="_blank" class="p-4 bg-card rounded-lg border-glow hover:bg-neonTeal/10 transition">
                         <i class="fa fa-tiktok text-2xl text-neonTeal mb-2"></i>
                         <div>@hqesports</div>
-                    </a>
-                    <a href="https://x.com/hqesports" target="_blank" class="p-4 bg-card rounded-lg border-glow hover:bg-neonTeal/10 transition">
-                        <i class="fa fa-twitter text-2xl text-neonTeal mb-2"></i>
-                        <div>@hqesports</div>
-                    </a>
-                    <a id="contactDiscord" href="https://discord.gg/hqesports" target="_blank" class="p-4 bg-card rounded-lg border-glow hover:bg-neonTeal/10 transition">
-                        <i class="fa fa-discord text-2xl text-neonTeal mb-2"></i>
-                        <div>Join Server</div>
                     </a>
                 </div>
 
@@ -357,7 +365,12 @@
             </div>
             <div>
                 <h4 class="font-semibold mb-3">Community</h4>
-                <a id="footerDiscord" href="https://discord.gg/hqesports" target="_blank" class="text-neonGreen hover:glow-green"><i class="fa fa-discord mr-2"></i> Discord Server</a>
+                <!-- ✅ TWO DISCORD + TIKTOK IN FOOTER ✅ -->
+                <div class="space-y-2 text-sm">
+                    <a id="footerDiscord1" href="https://discord.gg/hqesports1" target="_blank" class="text-neonGreen hover:glow-green block"><i class="fa fa-discord mr-2"></i> Discord Server 1</a>
+                    <a id="footerDiscord2" href="https://discord.gg/hqesports2" target="_blank" class="text-neonGreen hover:glow-green block"><i class="fa fa-discord mr-2"></i> Discord Server 2</a>
+                    <a id="footerTikTok" href="https://tiktok.com/@hqesports" target="_blank" class="text-neonGreen hover:glow-green block"><i class="fa fa-tiktok mr-2"></i> TikTok</a>
+                </div>
             </div>
         </div>
         <div class="container mx-auto text-center text-gray-500 text-sm mt-8 pt-6 border-t border-dark">
@@ -480,22 +493,48 @@
         });
 
         // --------------------------
-        // SITE SETTINGS — WORKING
+        // ✅ UPDATED LINK SYSTEM — 2 DISCORD + TIKTOK ✅
         // --------------------------
-        const discordInput = document.getElementById('discordLinkInput');
-        const saveDiscord = document.getElementById('saveDiscord');
-        const navDiscord = document.getElementById('navDiscord');
-        const contactDiscord = document.getElementById('contactDiscord');
-        const footerDiscord = document.getElementById('footerDiscord');
+        const discord1Input = document.getElementById('discordLink1Input');
+        const discord2Input = document.getElementById('discordLink2Input');
+        const tiktokInput = document.getElementById('tiktokLinkInput');
 
-        saveDiscord.addEventListener('click', () => {
-            const newLink = discordInput.value.trim();
-            navDiscord.href = newLink;
-            contactDiscord.href = newLink;
-            footerDiscord.href = newLink;
-            alert('✅ Discord link updated EVERYWHERE instantly!');
+        const navDiscord1 = document.getElementById('navDiscord1');
+        const navDiscord2 = document.getElementById('navDiscord2');
+        const navTikTok = document.getElementById('navTikTok');
+
+        const contactDiscord1 = document.getElementById('contactDiscord1');
+        const contactDiscord2 = document.getElementById('contactDiscord2');
+        const contactTikTok = document.getElementById('contactTikTok');
+
+        const footerDiscord1 = document.getElementById('footerDiscord1');
+        const footerDiscord2 = document.getElementById('footerDiscord2');
+        const footerTikTok = document.getElementById('footerTikTok');
+
+        document.getElementById('saveLinksBtn').addEventListener('click', () => {
+            const d1 = discord1Input.value.trim();
+            const d2 = discord2Input.value.trim();
+            const tt = tiktokInput.value.trim();
+
+            // Update everywhere
+            navDiscord1.href = d1;
+            navDiscord2.href = d2;
+            navTikTok.href = tt;
+
+            contactDiscord1.href = d1;
+            contactDiscord2.href = d2;
+            contactTikTok.href = tt;
+
+            footerDiscord1.href = d1;
+            footerDiscord2.href = d2;
+            footerTikTok.href = tt;
+
+            alert('✅ ALL LINKS UPDATED EVERYWHERE!');
         });
 
+        // --------------------------
+        // SITE STATS
+        // --------------------------
         const saveStats = document.getElementById('saveStats');
         saveStats.addEventListener('click', () => {
             document.getElementById('numPlayers').textContent = document.getElementById('statPlayers').value;
