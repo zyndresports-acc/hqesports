@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HQ ESPORTS | Competitive Gaming</title>
+    <title>HQ ESPORTS | Zyndr X Fatal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
@@ -16,6 +16,9 @@
                         neonGreen: '#00FF88',
                         neonLime: '#88FF00',
                         neonTeal: '#00CCAA',
+                        zyndrBlue: '#0088FF',
+                        fatalRed: '#FF2222',
+                        crossYellow: '#FFCC00',
                     },
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                 }
@@ -27,6 +30,9 @@
             .glow-green { filter: drop-shadow(0 0 10px #00FF88); }
             .glow-lime { filter: drop-shadow(0 0 10px #88FF00); }
             .glow-teal { filter: drop-shadow(0 0 10px #00CCAA); }
+            .glow-zyndr { filter: drop-shadow(0 0 10px #0088FF); }
+            .glow-fatal { filter: drop-shadow(0 0 10px #FF2222); }
+            .glow-cross { filter: drop-shadow(0 0 10px #FFCC00); }
             .gradient-btn { background: linear-gradient(90deg, #00FF88, #88FF00); }
             .gradient-text { background: linear-gradient(90deg, #00FF88, #88FF00); background-clip: text; -webkit-background-clip: text; color: transparent; }
             .border-glow { border: 1px solid rgba(0, 255, 136, 0.4); box-shadow: 0 0 12px rgba(0, 255, 136, 0.2); }
@@ -37,6 +43,9 @@
             .role-admin { border-left: 3px solid #00FF88; }
             .role-staff { border-left: 3px solid #88FF00; }
             .role-coach { border-left: 3px solid #00CCAA; }
+            .zyndr-text { color: #0088FF; }
+            .fatal-text { color: #FF2222; }
+            .cross-text { color: #FFCC00; }
         }
     </style>
     <!-- Protection -->
@@ -57,6 +66,10 @@
             <input type="text" id="loginEmail" placeholder="Email Address" autocomplete="off" class="w-full p-3 mb-4 rounded bg-dark border border-neonGreen/30">
             <input type="password" id="loginPass" placeholder="Password" autocomplete="off" class="w-full p-3 mb-4 rounded bg-dark border border-neonGreen/30">
             <button id="doLogin" class="gradient-btn w-full py-3 rounded-md font-bold btn-hover">LOGIN</button>
+            
+            <div class="text-center mt-4 text-sm">
+                <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+            </div>
         </div>
     </div>
 
@@ -70,6 +83,10 @@
             <input type="text" placeholder="Current Rank / Level" class="w-full p-3 mb-6 rounded bg-dark border border-neonLime/30">
             <button class="gradient-btn w-full py-3 rounded-md font-bold btn-hover mb-4">CREATE ACCOUNT</button>
             <p class="text-center text-sm text-gray-400">Already have account? <a href="#" class="text-neonGreen" onclick="toggleModal('loginModal')">Sign in</a></p>
+            
+            <div class="text-center mt-4 text-sm">
+                <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+            </div>
         </div>
     </div>
 
@@ -108,6 +125,10 @@
             <input type="text" id="statCoaching" class="w-full p-2 mb-1 rounded bg-card" value="58">
             <input type="text" id="statMembers" class="w-full p-2 mb-2 rounded bg-card" value="215">
             <button id="saveStats" class="w-full gradient-btn py-2 rounded text-sm font-bold btn-hover">💾 UPDATE LIVE STATS</button>
+
+            <div class="text-center mt-4 text-sm">
+                <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+            </div>
         </div>
 
         <!-- STAFF AREA -->
@@ -116,6 +137,10 @@
             <button class="w-full text-left p-2 rounded hover:bg-neonLime/10 mb-1">APPROVE / DELETE CLIPS</button>
             <button class="w-full text-left p-2 rounded hover:bg-neonLime/10 mb-1">EDIT EVENT CALENDAR</button>
             <button class="w-full text-left p-2 rounded hover:bg-neonLime/10">MANAGE INBOX MESSAGES</button>
+            
+            <div class="text-center mt-4 text-sm">
+                <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+            </div>
         </div>
 
         <!-- COACH AREA -->
@@ -124,6 +149,10 @@
             <button class="w-full text-left p-2 rounded hover:bg-neonTeal/10 mb-1">VIEW COACHING REQUESTS</button>
             <button class="w-full text-left p-2 rounded hover:bg-neonTeal/10 mb-1">UPDATE SESSION SCHEDULE</button>
             <button class="w-full text-left p-2 rounded hover:bg-neonTeal/10">SEND FEEDBACK TO PLAYERS</button>
+            
+            <div class="text-center mt-4 text-sm">
+                <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+            </div>
         </div>
 
         <!-- ALL ROLES -->
@@ -131,6 +160,10 @@
             <button class="w-full text-left p-2 rounded hover:bg-neonGreen/10">👤 VIEW USERS</button>
             <button class="w-full text-left p-2 rounded hover:bg-neonGreen/10">🎮 VIEW ROSTER</button>
             <button class="w-full text-left p-2 rounded hover:bg-neonGreen/10">📅 VIEW CALENDAR</button>
+            
+            <div class="text-center mt-4 text-sm">
+                <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+            </div>
         </div>
     </div>
 
@@ -138,7 +171,7 @@
     <nav class="fixed w-full top-0 z-30 bg-dark/80 backdrop-blur-md border-b border-neonGreen/20">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold gradient-text glow-green">HQ ESPORTS</div>
-            <div class="hidden md:flex gap-6 text-sm">
+            <div class="hidden md:flex gap-6 text-sm items-center">
                 <a href="#" onclick="showPage('home')" class="hover:text-neonGreen transition">HOME</a>
                 <a href="#" onclick="showPage('about')" class="hover:text-neonGreen transition">ABOUT</a>
                 <a href="#" onclick="showPage('clips')" class="hover:text-neonGreen transition">CLIPS</a>
@@ -149,6 +182,12 @@
                 <a id="navDiscord1" href="https://discord.gg/hqesports1" target="_blank" class="text-neonGreen hover:glow-green"><i class="fa fa-discord text-lg"></i></a>
                 <a id="navDiscord2" href="https://discord.gg/hqesports2" target="_blank" class="text-neonGreen hover:glow-green"><i class="fa fa-discord text-lg"></i></a>
                 <a id="navTikTok" href="https://tiktok.com/@hqesports" target="_blank" class="text-neonGreen hover:glow-green"><i class="fa fa-tiktok text-lg"></i></a>
+                
+                <span class="ml-2">
+                    <span class="zyndr-text glow-zyndr font-bold">ZYNDER</span>
+                    <span class="cross-text glow-cross font-bold mx-1">X</span>
+                    <span class="fatal-text glow-fatal font-bold">FATAL</span>
+                </span>
             </div>
             <button id="loginBtn" onclick="toggleModal('loginModal')" class="gradient-btn px-5 py-2 rounded-md font-bold btn-hover">LOGIN</button>
         </div>
@@ -162,6 +201,13 @@
             <section id="home" class="page-section active">
                 <div class="text-center mb-16">
                     <h1 class="text-[clamp(2.6rem,6vw,5rem)] font-bold gradient-text glow-green mb-4">YOUR HOME. YOUR DOMINATION.<br>YOUR LEGACY.</h1>
+                    
+                    <div class="text-3xl md:text-4xl font-bold mb-6">
+                        <span class="zyndr-text glow-zyndr">ZYNDER</span>
+                        <span class="cross-text glow-cross mx-3">X</span>
+                        <span class="fatal-text glow-fatal">FATAL</span>
+                    </div>
+                    
                     <p class="text-lg text-gray-300 max-w-2xl mx-auto">Elite competitive gaming. Top-tier coaching. Championship teams. Built for players who want to be the best.</p>
                 </div>
 
@@ -191,11 +237,19 @@
                         <h3 class="text-xl font-bold mb-4 gradient-text">PRO COACHING</h3>
                         <p class="text-gray-300 mb-4">1-on-1 sessions with pro players. Master mechanics, strategy, and game sense — rank up fast.</p>
                         <button onclick="showPage('coaching')" class="gradient-btn w-full py-2 rounded font-bold btn-hover">BOOK SESSION</button>
+                        
+                        <div class="text-center mt-3 text-sm">
+                            <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+                        </div>
                     </div>
                     <div class="bg-card p-6 rounded-xl border-glow">
                         <h3 class="text-xl font-bold mb-4 gradient-text">SUBMIT YOUR CLIP</h3>
                         <p class="text-gray-300 mb-4">Best plays, insane clutches, or epic moments? Send it in — get featured and earn recognition.</p>
                         <button onclick="showPage('clips')" class="gradient-btn w-full py-2 rounded font-bold btn-hover">SEND CLIP</button>
+                        
+                        <div class="text-center mt-3 text-sm">
+                            <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -203,6 +257,13 @@
             <!-- JOIN ROSTER -->
             <section id="join" class="page-section max-w-md mx-auto">
                 <h2 class="text-3xl font-bold text-center mb-8 gradient-text glow-lime">JOIN THE ROSTER</h2>
+                
+                <div class="text-center text-2xl font-bold mb-4">
+                    <span class="zyndr-text glow-zyndr">ZYNDER</span>
+                    <span class="cross-text glow-cross mx-2">X</span>
+                    <span class="fatal-text glow-fatal">FATAL</span>
+                </div>
+                
                 <div class="bg-card p-8 rounded-xl border-glow">
                     <input type="text" placeholder="Full Name / Gamertag" class="w-full p-3 mb-4 rounded bg-dark border border-neonLime/30">
                     <input type="text" placeholder="Discord Tag" class="w-full p-3 mb-4 rounded bg-dark border border-neonLime/30">
@@ -216,20 +277,39 @@
             <!-- ABOUT -->
             <section id="about" class="page-section">
                 <h2 class="text-3xl font-bold text-center mb-6 gradient-text glow-green">ABOUT HQ ESPORTS</h2>
+                
+                <div class="text-center text-2xl font-bold mb-6">
+                    <span class="zyndr-text glow-zyndr">ZYNDER</span>
+                    <span class="cross-text glow-cross mx-2">X</span>
+                    <span class="fatal-text glow-fatal">FATAL</span>
+                </div>
+                
                 <p class="text-center text-lg text-gray-300 max-w-2xl mx-auto mb-12">Our mission: <span class="text-neonGreen font-semibold">Build the ultimate home for competitive players.</span> We develop talent, compete at the highest level, and grow together.</p>
 
                 <div class="grid md:grid-cols-3 gap-6 mb-16">
                     <div class="bg-card p-6 rounded-xl border-glow text-center">
                         <h3 class="text-xl font-bold mb-3 text-neonGreen">ELITE MECHANICS</h3>
                         <p class="text-gray-400">Refined aim, movement, speed, and precision — trained by champions.</p>
+                        
+                        <div class="text-center mt-3 text-sm">
+                            <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+                        </div>
                     </div>
                     <div class="bg-card p-6 rounded-xl border-glow text-center">
                         <h3 class="text-xl font-bold mb-3 text-neonGreen">ADVANCED STRATEGY</h3>
                         <p class="text-gray-400">Game sense, team play, positioning, and decision making — play smarter.</p>
+                        
+                        <div class="text-center mt-3 text-sm">
+                            <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+                        </div>
                     </div>
                     <div class="bg-card p-6 rounded-xl border-glow text-center">
                         <h3 class="text-xl font-bold mb-3 text-neonGreen">STRONG COMMUNITY</h3>
                         <p class="text-gray-400">Scrims, tournaments, feedback, and growth — surrounded by winners.</p>
+                        
+                        <div class="text-center mt-3 text-sm">
+                            <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+                        </div>
                     </div>
                 </div>
 
@@ -257,6 +337,13 @@
             <!-- CLIPS -->
             <section id="clips" class="page-section max-w-3xl mx-auto">
                 <h2 class="text-3xl font-bold text-center mb-8 gradient-text glow-teal">CLIPS HUB</h2>
+                
+                <div class="text-center text-2xl font-bold mb-4">
+                    <span class="zyndr-text glow-zyndr">ZYNDER</span>
+                    <span class="cross-text glow-cross mx-2">X</span>
+                    <span class="fatal-text glow-fatal">FATAL</span>
+                </div>
+                
                 <div class="bg-card p-8 rounded-xl border-glow mb-12">
                     <h3 class="text-xl font-bold mb-4 text-neonTeal">SUBMIT YOUR PLAY</h3>
                     <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 rounded bg-dark border border-neonTeal/30">
@@ -272,10 +359,18 @@
                     <div class="bg-card p-4 rounded border border-neonTeal/20">
                         <div class="text-sm text-gray-400">Featured Play</div>
                         <div class="font-bold">1v5 Clutch Win</div>
+                        
+                        <div class="text-center mt-2 text-xs">
+                            <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+                        </div>
                     </div>
                     <div class="bg-card p-4 rounded border border-neonTeal/20">
                         <div class="text-sm text-gray-400">Top Play</div>
                         <div class="font-bold">Insane Ace Round</div>
+                        
+                        <div class="text-center mt-2 text-xs">
+                            <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -283,6 +378,13 @@
             <!-- EVENTS -->
             <section id="events" class="page-section">
                 <h2 class="text-3xl font-bold text-center mb-8 gradient-text glow-lime">EVENTS CALENDAR</h2>
+                
+                <div class="text-center text-2xl font-bold mb-4">
+                    <span class="zyndr-text glow-zyndr">ZYNDER</span>
+                    <span class="cross-text glow-cross mx-2">X</span>
+                    <span class="fatal-text glow-fatal">FATAL</span>
+                </div>
+                
                 <div class="flex flex-wrap gap-3 justify-center mb-10">
                     <button class="px-4 py-2 rounded bg-neonLime/20 text-neonLime border border-neonLime/40">ALL</button>
                     <button class="px-4 py-2 rounded bg-dark border border-gray-600 hover:border-neonLime">MAJOR TOURNAMENTS</button>
@@ -305,6 +407,13 @@
             <!-- COACHING -->
             <section id="coaching" class="page-section max-w-md mx-auto">
                 <h2 class="text-3xl font-bold text-center mb-8 gradient-text glow-green">REQUEST COACHING</h2>
+                
+                <div class="text-center text-2xl font-bold mb-4">
+                    <span class="zyndr-text glow-zyndr">ZYNDER</span>
+                    <span class="cross-text glow-cross mx-2">X</span>
+                    <span class="fatal-text glow-fatal">FATAL</span>
+                </div>
+                
                 <div class="bg-card p-8 rounded-xl border-glow">
                     <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 rounded bg-dark border border-neonGreen/30">
                     <input type="text" placeholder="Discord Tag" class="w-full p-3 mb-4 rounded bg-dark border border-neonGreen/30">
@@ -318,19 +427,38 @@
             <!-- CONTACT -->
             <section id="contact" class="page-section max-w-lg mx-auto">
                 <h2 class="text-3xl font-bold text-center mb-8 gradient-text glow-teal">GET IN TOUCH</h2>
+                
+                <div class="text-center text-2xl font-bold mb-4">
+                    <span class="zyndr-text glow-zyndr">ZYNDER</span>
+                    <span class="cross-text glow-cross mx-2">X</span>
+                    <span class="fatal-text glow-fatal">FATAL</span>
+                </div>
+                
                 <!-- ✅ TWO DISCORD + TIKTOK IN CONTACT ✅ -->
                 <div class="grid md:grid-cols-3 gap-4 mb-10 text-center">
                     <a id="contactDiscord1" href="https://discord.gg/hqesports1" target="_blank" class="p-4 bg-card rounded-lg border-glow hover:bg-neonTeal/10 transition">
                         <i class="fa fa-discord text-2xl text-neonTeal mb-2"></i>
                         <div>Discord Server 1</div>
+                        
+                        <div class="text-xs mt-1">
+                            <span class="zyndr-text glow-zyndr">Z</span><span class="cross-text glow-cross">X</span><span class="fatal-text glow-fatal">F</span>
+                        </div>
                     </a>
                     <a id="contactDiscord2" href="https://discord.gg/hqesports2" target="_blank" class="p-4 bg-card rounded-lg border-glow hover:bg-neonTeal/10 transition">
                         <i class="fa fa-discord text-2xl text-neonTeal mb-2"></i>
                         <div>Discord Server 2</div>
+                        
+                        <div class="text-xs mt-1">
+                            <span class="zyndr-text glow-zyndr">Z</span><span class="cross-text glow-cross">X</span><span class="fatal-text glow-fatal">F</span>
+                        </div>
                     </a>
                     <a id="contactTikTok" href="https://tiktok.com/@hqesports" target="_blank" class="p-4 bg-card rounded-lg border-glow hover:bg-neonTeal/10 transition">
                         <i class="fa fa-tiktok text-2xl text-neonTeal mb-2"></i>
                         <div>@hqesports</div>
+                        
+                        <div class="text-xs mt-1">
+                            <span class="zyndr-text glow-zyndr">Z</span><span class="cross-text glow-cross">X</span><span class="fatal-text glow-fatal">F</span>
+                        </div>
                     </a>
                 </div>
 
@@ -350,6 +478,13 @@
         <div class="container mx-auto max-w-6xl grid md:grid-cols-3 gap-8">
             <div>
                 <div class="text-xl font-bold gradient-text glow-green mb-3">HQ ESPORTS</div>
+                
+                <div class="text-lg font-bold mb-2">
+                    <span class="zyndr-text glow-zyndr">ZYNDER</span>
+                    <span class="cross-text glow-cross mx-1">X</span>
+                    <span class="fatal-text glow-fatal">FATAL</span>
+                </div>
+                
                 <p class="text-gray-400">Your Home. Your Domination. Your Legacy.</p>
             </div>
             <div>
@@ -362,6 +497,10 @@
                     <a href="#" onclick="showPage('coaching')" class="hover:text-neonGreen">Coaching</a>
                     <a href="#" onclick="showPage('contact')" class="hover:text-neonGreen">Contact</a>
                 </div>
+                
+                <div class="text-center mt-3 text-sm">
+                    <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+                </div>
             </div>
             <div>
                 <h4 class="font-semibold mb-3">Community</h4>
@@ -371,10 +510,17 @@
                     <a id="footerDiscord2" href="https://discord.gg/hqesports2" target="_blank" class="text-neonGreen hover:glow-green block"><i class="fa fa-discord mr-2"></i> Discord Server 2</a>
                     <a id="footerTikTok" href="https://tiktok.com/@hqesports" target="_blank" class="text-neonGreen hover:glow-green block"><i class="fa fa-tiktok mr-2"></i> TikTok</a>
                 </div>
+                
+                <div class="text-center mt-3 text-sm">
+                    <span class="zyndr-text glow-zyndr">ZYNDER</span> <span class="cross-text glow-cross">X</span> <span class="fatal-text glow-fatal">FATAL</span>
+                </div>
             </div>
         </div>
         <div class="container mx-auto text-center text-gray-500 text-sm mt-8 pt-6 border-t border-dark">
-            © 2026 HQ ESPORTS • ALL RIGHTS RESERVED
+            <span class="zyndr-text glow-zyndr">ZYNDER</span>
+            <span class="cross-text glow-cross mx-1">X</span>
+            <span class="fatal-text glow-fatal">FATAL</span>
+            &nbsp; © 2026 HQ ESPORTS • ALL RIGHTS RESERVED
         </div>
     </footer>
 
